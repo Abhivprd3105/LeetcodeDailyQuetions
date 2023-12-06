@@ -1,0 +1,11 @@
+class Solution {
+public:
+    int totalMoney(int n) {
+        
+       int weeks=n/7;
+       int days=n%7;
+       int weekMoney=(weeks)*(28+(weeks-1)*3.5);     
+       int dayMoney=(days)*((weeks+1)+(days-1)*0.5);
+       return weekMoney+dayMoney;
+    }
+};
