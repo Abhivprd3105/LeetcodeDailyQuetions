@@ -1,0 +1,38 @@
+//solution 1 : 451 ms runtime 
+class Solution {
+public:
+    string largestOddNumber(string num) {
+
+        string result="";
+        string oddStr="";
+        for(int i=0;i<num.length();i++)
+        {
+            oddStr+=num[i];
+            if(int(num[i])%2==1)  result=oddStr;
+        }
+
+       return result;
+        
+    }
+};
+
+// solution 2: 35 ms
+
+class Solution {
+public:
+    string largestOddNumber(string num) {
+
+        int index=-1;
+        for(int i=num.length();i>=0;i--)
+        {
+            if(int(num[i])%2==1)
+            {
+                index=i;
+                break;
+            }
+        }
+       return index==-1 ? "" : num.substr(0,index+1);
+        
+    }
+};
+
