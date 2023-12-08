@@ -1,0 +1,26 @@
+class Solution {
+public:
+    string tree2str(TreeNode* root) {
+        string result = "";
+         check(root, result);
+         return result;
+    }
+    void check(TreeNode* root, string &result) {
+        if (root == NULL) {
+            return;
+        }
+
+        result += to_string(root->val);
+        if (root->left||root->right) {
+            result += '(';
+            check(root->left, result);
+            result += ')';
+        }
+        if (root->right) {
+            result += '(';
+            check(root->right, result);
+            result += ')';
+        }
+        
+    }
+};
