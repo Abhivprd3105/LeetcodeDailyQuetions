@@ -1,3 +1,5 @@
+1: for loop to check count:This will give you actual count of number.
+
 class Solution {
 public:
     int findSpecialInteger(vector<int>& arr) {
@@ -14,3 +16,23 @@ public:
         
     }
 };
+
+
+2. check element at position 25% ahead: This does not help with counting of number
+
+class Solution {
+public:
+    int findSpecialInteger(vector<int>& arr) {
+        int length = arr.size() / 4;
+        for (int i = 0; i < arr.size() - length; i++) {
+            if (arr[i] == arr[i + length]) {
+                return arr[i];
+            }
+        }
+        
+        return -1;
+    }
+};
+
+
+
